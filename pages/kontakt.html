@@ -58,12 +58,12 @@ Email.send({
                 Username : "07mandao@skola.boras.se",
                 Password : "E01C138FBF1B6E99380683512AEF09031053",
                 To : '07mandao@skola.boras.se',
-                From : "07mandao@skola.boras.se",
+                From : document.getElementById("contactForm").value,
                 Subject : "This is the subject",
-                Body : "Namn: " + document.getElementById("formName").value
-                            + "<br> E-post: " + document.getElementById("formEmail").value
-                            + "<br> Mobilnummer: " + document.getElementById("formMobile").value
-                            + "<br> Meddelande: " + document.getElementById("formMessage").value
+                Body : "Namn: " + document.getElementById("first-Name").value
+                            + "<br> E-post: " + document.getElementById("email").value
+                            + "<br> Mobilnummer: " + document.getElementById("phone").value
+                            + "<br> Meddelande: " + document.getElementById("textfield").value
             }).then(
                 message => alert(message)
             ).catch(
