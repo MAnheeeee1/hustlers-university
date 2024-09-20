@@ -53,21 +53,22 @@
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
       function sendEmail() {
-        Email.send({
-          SecureToken: "8e90171b-4a15-4a6d-86d0-b8d51b00ffc6",
-          To: "07mandao@skola.boras.se",
-          From: document.getElementById("contactForm").value,
-          Subject: "Nytt användarmeddelande",
-          Body:
-            "Namn: " +
-            document.getElementById("first-Name").value +
-            "<br> E-post: " +
-            document.getElementById("email").value +
-            "<br> Mobilnummer: " +
-            document.getElementById("phone").value +
-            "<br> Meddelande: " +
-            document.getElementById("textfield").value,
-        }).then((message) => alert("Meddelandet skickades"));
+Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "07mandao@skola.boras.se",
+                Password : "E01C138FBF1B6E99380683512AEF09031053",
+                To : '07mandao@skola.boras.se',
+                From : "07mandao@skola.boras.se",
+                Subject : "This is the subject",
+                Body : "Namn: " + document.getElementById("formName").value
+                            + "<br> E-post: " + document.getElementById("formEmail").value
+                            + "<br> Mobilnummer: " + document.getElementById("formMobile").value
+                            + "<br> Meddelande: " + document.getElementById("formMessage").value
+            }).then(
+                message => alert(message)
+            ).catch(
+                error => alert("Ett fel inträffade: " + error)
+            );
       }
     </script>
   </body>
